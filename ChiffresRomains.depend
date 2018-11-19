@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1542618464 source:d:\free pascal fpc\bin\i386-win32\programs\f21\codeblocks\chiffresromains\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
