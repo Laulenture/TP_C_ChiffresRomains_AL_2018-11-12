@@ -38,29 +38,21 @@ PROCEDURE EntierVersRomain ()
 
         //TEST POUR LES 900
         SI nombre >= 900 ALORS
-            quotient <- nombre DIV 900
-            SI quotient > 0 ALORS
-                resultat <- resultat + "CM"
-            FINSI
+            resultat <- resultat + "CM"
             nombre <- nombre - 900
         FINSI
 
         //TEST POUR LES 500
         SI nombre >= 500 ALORS
-            quotient <- nombre DIV 500
-            SI quotient > 0 ALORS
-                resultat <- resultat + "D"
-            FINSI
+            resultat <- resultat + "D"
             nombre <- nombre - 500
         FINSI
 
         //TEST POUR LES 400
         SI nombre >= 400 ALORS
-        quotient <- nombre DIV 400
-            SI quotient > 0 ALORS
-                resultat <- resultat + "CD"
-            FINSI
-        nombre <- nombre - 400
+            resultat <- resultat + "CD"
+            nombre <- nombre - 400
+        FINSI
 
         //TEST POUR LES 100
         SI nombre >= 100 ALORS
@@ -78,27 +70,21 @@ PROCEDURE EntierVersRomain ()
 
         //TEST POUR LES 90
         SI nombre >= 90 ALORS
-        quotient <- nombre DIV 90
-            SI quotient > 0 ALORS
-                resultat <- resultat + "XC"
-            FINSI
-        nombre <- nombre - 90
+            resultat <- resultat + "XC"
+            nombre <- nombre - 90
+        FINSI
 
         //TEST POUR LES 50
         SI nombre >= 50 ALORS
-        quotient <- nombre DIV 50
-            SI quotient > 0 ALORS
-                resultat <- resultat + "L"
-            FINSI
-        nombre <- nombre - 50
+            resultat <- resultat + "L"
+            nombre <- nombre - 50
+        FINSI
 
         //TEST POUR LES 40
         SI nombre >= 40 ALORS
-        quotient <- nombre DIV 40
-            SI quotient > 0 ALORS
-                resultat <- resultat + "XL"
-            FINSI
-        nombre <- nombre - 40
+            resultat <- resultat + "XL"
+            nombre <- nombre - 40
+        FINSI
 
         //TEST POUR LES 10
         SI nombre >= 10 ALORS
@@ -116,27 +102,21 @@ PROCEDURE EntierVersRomain ()
 
         //TEST POUR 9
         SI nombre >= 9 ALORS
-        quotient <- nombre DIV 9
-            SI quotient > 0 ALORS
-                resultat <- resultat + "IX"
-            FINSI
-        nombre <- nombre - 9
+            resultat <- resultat + "IX"
+            nombre <- nombre - 9
+        FINSI
 
         //TEST POUR 5
         SI nombre >= 5 ALORS
-        quotient <- nombre DIV 5
-            SI quotient > 0 ALORS
-                resultat <- resultat + "V"
-            FINSI
-        nombre <- nombre - 5
+            resultat <- resultat + "V"
+            nombre <- nombre - 5
+        FINSI
 
         //TEST POUR LES 4
         SI nombre >= 4 ALORS
-        quotient <- nombre DIV 4
-            SI quotient > 0 ALORS
-                resultat <- resultat + "IV"
-            FINSI
-        nombre <- nombre - 4
+            resultat <- resultat + "IV"
+            nombre <- nombre - 4
+        FINSI
 
         //TEST POUR LES 1
         SI nombre >= 1 ALORS
@@ -166,8 +146,16 @@ PROCEDURE RomainVersEntier ()
         nLen <- LONGUEUR(cNombre)
         POUR nCpt DE 1 à nLen FAIRE
 
-
-
+            CAS cNombre[nLen - nCpt + 1] PARMI
+                CAS "I":DEBUT
+                            SI nCpt > 0 ALORS
+                                nResultat <- nResultat + 1
+                            SINON
+                                SI ((cNombre[nLen - nCpt + 2] = 'V') OU ((cNombre[nLen - nCpt + 2] = 'X'))) ALORS
+                                    nResultat <- nResultat - 1
+                                FINSI
+                            FINSI
+                        FIN
         FINPOUR
 
 FINPROCEDURE

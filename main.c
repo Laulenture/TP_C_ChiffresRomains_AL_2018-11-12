@@ -158,23 +158,91 @@ void EntierVersRomain()
         nNombre -= (nQuotient * 1);
     }
 
-    printf("%s\n",cResultat);
+    printf("Le resultat est : %s\n",cResultat);
 }
 
 void RomainVersEntier()
 {
-    /*int nCpt = 0;
+    int nCpt = 0;
     int nLen = 0;
     int nResultat = 0;
-    char cNombre = "";
+    char cNombre[TAILLE] = "";
+
+    printf("Entrez un chiffre en chiffres romains\n");
+    scanf("%s",&cNombre);
 
     nLen = strlen(cNombre);
     for (nCpt = 0; nCpt <= nLen; nCpt++){
+        //test pour les I
         if (cNombre[nLen - nCpt] == 'I'){
-            nResultat += 1;
+            if (nCpt < 0){
+                nResultat += 1;
+            }
+            else{
+                if ((cNombre[nLen - nCpt + 1] == 'V') || (cNombre[nLen - nCpt + 1] == 'X')){
+                    nResultat -= 1;
+                }
+                else{
+                    nResultat += 1;
+                }
+            }
         }
-    }*/
 
+        //test pour les V
+        if (cNombre[nLen - nCpt] == 'V'){
+            nResultat += 5;
+        }
+
+        //test pour les X
+        if (cNombre[nLen - nCpt] == 'X'){
+            if (nCpt < 0){
+                nResultat += 10;
+            }
+            else{
+                if ((cNombre[nLen - nCpt + 1] == 'C') ||(cNombre[nLen - nCpt + 1] == 'L')){
+                    nResultat += 10;
+                }
+                else{
+                    nResultat -= 10;
+                }
+            }
+        }
+
+        //tets pour les L
+        if (cNombre[nLen - nCpt] == 'L'){
+            nResultat += 50;
+        }
+
+        //test pour les C
+        if (cNombre[nLen - nCpt] == 'C'){
+            if (nCpt < 0){
+                nResultat += 100;
+            }
+            else{
+                if ((cNombre[nLen - nCpt + 1] == 'D') ||(cNombre[nLen - nCpt + 1] == 'M')){
+                    nResultat += 100;
+                }
+                else{
+                    nResultat -= 100;
+                }
+            }
+        }
+
+        //tets pour les D
+        if (cNombre[nLen - nCpt] == 'D'){
+            nResultat += 500;
+        }
+
+        //tets pour les M
+        if (cNombre[nLen - nCpt] == 'M'){
+            nResultat += 1000;
+        }
+
+
+        printf("Le resultat est : %i\n",nResultat);
+
+
+    }
 }
 
 int main()
@@ -190,7 +258,7 @@ int main()
         if (nChoix == 1){
             EntierVersRomain();
         }
-        else{
+        else if(nChoix == 2){
             RomainVersEntier();
         }
     } while (nChoix != 0);
