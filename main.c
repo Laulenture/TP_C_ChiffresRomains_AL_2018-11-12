@@ -24,7 +24,7 @@ void EntierVersRomain()
 {
     int nNombre = 0, nQuotient = 0, nCpt = 0;
     char cResultat [TAILLE] = "";
-    int len = 0;
+    int nLen = 0;
 
     do{
         printf("Entrez un chiffre en entier entre %i et %i non inclus\n", MIN, MAX);
@@ -39,8 +39,8 @@ void EntierVersRomain()
         nQuotient = nNombre / 1000;
         if (nQuotient > 0){
             for (nCpt = 1; nCpt <= nQuotient; nCpt++){
-                len = strlen(cResultat);
-                cResultat[len] = 'M';
+                nLen = strlen(cResultat);
+                cResultat[nLen] = 'M';
 
             }
         }
@@ -51,33 +51,24 @@ void EntierVersRomain()
 
     //TEST POUR LES 900
     if (nNombre >= 900){
-        nQuotient = nNombre / 900;
-        if (nQuotient > 0){
-            len = strlen(cResultat);
-            cResultat[len] = 'C';
-            cResultat[len+1] = 'M';
-        }
+        nLen = strlen(cResultat);
+        cResultat[nLen] = 'C';
+        cResultat[nLen+1] = 'M';
         nNombre -= (900);
     }
 
     //TEST POUR LES 500
     if (nNombre >= 500){
-        nQuotient = nNombre / 500;
-        if (nQuotient > 0){
-            len = strlen(cResultat);
-            cResultat[len] = 'D';
-        }
+        nLen = strlen(cResultat);
+        cResultat[nLen] = 'D';
         nNombre -= (500);
     }
 
     //TEST POUR LES 400
     if (nNombre >= 400){
-        nQuotient = nNombre / 400;
-        if (nQuotient > 0){
-            len = strlen(cResultat);
-            cResultat[len] = 'C';
-            cResultat[len+1] = 'D';
-        }
+        nLen = strlen(cResultat);
+        cResultat[nLen] = 'C';
+        cResultat[nLen+1] = 'D';
         nNombre -= (400);
     }
 
@@ -86,8 +77,8 @@ void EntierVersRomain()
         nQuotient = nNombre / 100;
         if (nQuotient > 0){
             for (nCpt = 1; nCpt <= nQuotient; nCpt++){
-                len = strlen(cResultat);
-                cResultat[len] = 'C';
+                nLen = strlen(cResultat);
+                cResultat[nLen] = 'C';
             }
         }
         nNombre -= (nQuotient * 100);
@@ -97,33 +88,24 @@ void EntierVersRomain()
 
     //TEST POUR LES 90
     if (nNombre >= 90){
-        nQuotient = nNombre / 90;
-        if (nQuotient > 0){
-            len = strlen(cResultat);
-            cResultat[len] = 'X';
-            cResultat[len+1] = 'C';
-        }
+        nLen = strlen(cResultat);
+        cResultat[nLen] = 'X';
+        cResultat[nLen+1] = 'C';
         nNombre -= (90);
     }
 
     //TEST POUR LES 50
     if (nNombre >= 50){
-        nQuotient = nNombre / 50;
-        if (nQuotient > 0){
-            len = strlen(cResultat);
-            cResultat[len] = 'L';
-        }
+        nLen = strlen(cResultat);
+        cResultat[nLen] = 'L';
         nNombre -= (50);
     }
 
     //TEST POUR LES 40
     if (nNombre >= 40){
-        nQuotient = nNombre / 40;
-        if (nQuotient > 0){
-            len = strlen(cResultat);
-            cResultat[len] = 'X';
-            cResultat[len+1] = 'L';
-        }
+        nLen = strlen(cResultat);
+        cResultat[nLen] = 'X';
+        cResultat[nLen+1] = 'L';
         nNombre -= (40);
     }
 
@@ -132,8 +114,8 @@ void EntierVersRomain()
         nQuotient = nNombre / 10;
         if (nQuotient > 0){
             for (nCpt = 1; nCpt <= nQuotient; nCpt++){
-                len = strlen(cResultat);
-                cResultat[len] = 'X';
+                nLen = strlen(cResultat);
+                cResultat[nLen] = 'X';
             }
         }
         nNombre -= (nQuotient * 10);
@@ -143,33 +125,24 @@ void EntierVersRomain()
 
     //TEST POUR 9
     if (nNombre >= 9){
-        nQuotient = nNombre / 9;
-        if (nQuotient > 0){
-            len = strlen(cResultat);
-            cResultat[len] = '1';
-            cResultat[len+1] = 'X';
-        }
+        nLen = strlen(cResultat);
+        cResultat[nLen] = '1';
+        cResultat[nLen+1] = 'X';
         nNombre -= (9);
     }
 
     //TEST POUR 5
     if (nNombre >= 5){
-        nQuotient = nNombre / 5;
-        if (nQuotient > 0){
-            len = strlen(cResultat);
-            cResultat[len] = 'V';
-        }
+        nLen = strlen(cResultat);
+        cResultat[nLen] = 'V';
         nNombre -= (5);
     }
 
     //TEST POUR 4
     if (nNombre >= 4){
-        nQuotient = nNombre / 4;
-        if (nQuotient > 0){
-            len = strlen(cResultat);
-            cResultat[len] = 'I';
-            cResultat[len+1] = 'V';
-        }
+        nLen = strlen(cResultat);
+        cResultat[nLen] = 'I';
+        cResultat[nLen+1] = 'V';
         nNombre -= (4);
     }
 
@@ -178,8 +151,8 @@ void EntierVersRomain()
         nQuotient = nNombre / 1;
         if (nQuotient > 0){
             for (nCpt = 1; nCpt <= nQuotient; nCpt++){
-                len = strlen(cResultat);
-                cResultat[len] = 'I';
+                nLen = strlen(cResultat);
+                cResultat[nLen] = 'I';
             }
         }
         nNombre -= (nQuotient * 1);
@@ -190,8 +163,17 @@ void EntierVersRomain()
 
 void RomainVersEntier()
 {
+    /*int nCpt = 0;
+    int nLen = 0;
+    int nResultat = 0;
+    char cNombre = "";
 
-
+    nLen = strlen(cNombre);
+    for (nCpt = 0; nCpt <= nLen; nCpt++){
+        if (cNombre[nLen - nCpt] == 'I'){
+            nResultat += 1;
+        }
+    }*/
 
 }
 

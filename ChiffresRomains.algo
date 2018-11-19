@@ -22,145 +22,153 @@ PROCEDURE EntierVersRomain ()
             FINSI
         JUSQU'A nombre > 0 ET nombre < 4000
 
-        REPETER
-            //TEST POUR LES MILLIERS
-            SI nombre >=1000 ALORS
-                quotient <- nombre DIV 1000
-                SI quotient > 0 ALORS
-                    POUR cpt de 1 à quotient
-                        resultat <- resultat + "M"
-                    FINPOUR
-                FINSI
-                nombre <- nombre - (quotient * 1000)
+        //TEST POUR LES MILLIERS
+        SI nombre >=1000 ALORS
+            quotient <- nombre DIV 1000
+            SI quotient > 0 ALORS
+                POUR cpt de 1 à quotient
+                    resultat <- resultat + "M"
+                FINPOUR
             FINSI
+            nombre <- nombre - (quotient * 1000)
+        FINSI
 
 
-            //TESTS POUR LES CENTAINES
+        //TESTS POUR LES CENTAINES
 
-            //TEST POUR LES 900
-            SI nombre >= 900 ALORS
-                quotient <- nombre DIV 900
-                SI quotient > 0 ALORS
-                    resultat <- resultat + "CM"
-                FINSI
-                nombre <- nombre - 900
+        //TEST POUR LES 900
+        SI nombre >= 900 ALORS
+            quotient <- nombre DIV 900
+            SI quotient > 0 ALORS
+                resultat <- resultat + "CM"
             FINSI
+            nombre <- nombre - 900
+        FINSI
 
-            //TEST POUR LES 500
-            SI nombre >= 500 ALORS
-                quotient <- nombre DIV 500
-                SI quotient > 0 ALORS
-                    resultat <- resultat + "D"
-                FINSI
-                nombre <- nombre - 500
+        //TEST POUR LES 500
+        SI nombre >= 500 ALORS
+            quotient <- nombre DIV 500
+            SI quotient > 0 ALORS
+                resultat <- resultat + "D"
             FINSI
+            nombre <- nombre - 500
+        FINSI
 
-            //TEST POUR LES 400
-            SI nombre >= 400 ALORS
-            quotient <- nombre DIV 400
-                SI quotient > 0 ALORS
-                    resultat <- resultat + "CD"
-                FINSI
-            nombre <- nombre - 400
-
-            //TEST POUR LES 100
-            SI nombre >= 100 ALORS
-                quotient <- nombre DIV 100
-                SI quotient > 0 ALORS
-                    POUR cpt de 1 à quotient
-                        resultat <- resultat + "C"
-                    FINPOUR
-                FINSI
-                nombre <- nombre - (quotient * 100)
+        //TEST POUR LES 400
+        SI nombre >= 400 ALORS
+        quotient <- nombre DIV 400
+            SI quotient > 0 ALORS
+                resultat <- resultat + "CD"
             FINSI
+        nombre <- nombre - 400
 
-
-            //TESTS POUR LES DIZAINES
-
-            //TEST POUR LES 90
-            SI nombre >= 90 ALORS
-            quotient <- nombre DIV 90
-                SI quotient > 0 ALORS
-                    resultat <- resultat + "XC"
-                FINSI
-            nombre <- nombre - 90
-
-            //TEST POUR LES 50
-            SI nombre >= 50 ALORS
-            quotient <- nombre DIV 50
-                SI quotient > 0 ALORS
-                    resultat <- resultat + "L"
-                FINSI
-            nombre <- nombre - 50
-
-            //TEST POUR LES 40
-            SI nombre >= 40 ALORS
-            quotient <- nombre DIV 40
-                SI quotient > 0 ALORS
-                    resultat <- resultat + "XL"
-                FINSI
-            nombre <- nombre - 40
-
-            //TEST POUR LES 10
-            SI nombre >= 10 ALORS
-                quotient <- nombre DIV 10
-                SI quotient > 0 ALORS
-                    POUR cpt de 1 à quotient
-                        resultat <- resultat + "X"
-                    FINPOUR
-                FINSI
-                nombre <- nombre - (quotient * 10)
+        //TEST POUR LES 100
+        SI nombre >= 100 ALORS
+            quotient <- nombre DIV 100
+            SI quotient > 0 ALORS
+                POUR cpt de 1 à quotient
+                    resultat <- resultat + "C"
+                FINPOUR
             FINSI
+            nombre <- nombre - (quotient * 100)
+        FINSI
 
 
-            //TESTS POUR LES UNITES
+        //TESTS POUR LES DIZAINES
 
-            //TEST POUR 9
-            SI nombre >= 9 ALORS
-            quotient <- nombre DIV 9
-                SI quotient > 0 ALORS
-                    resultat <- resultat + "IX"
-                FINSI
-            nombre <- nombre - 9
-
-            //TEST POUR 5
-            SI nombre >= 5 ALORS
-            quotient <- nombre DIV 5
-                SI quotient > 0 ALORS
-                    resultat <- resultat + "V"
-                FINSI
-            nombre <- nombre - 5
-
-            //TEST POUR LES 4
-            SI nombre >= 4 ALORS
-            quotient <- nombre DIV 4
-                SI quotient > 0 ALORS
-                    resultat <- resultat + "IV"
-                FINSI
-            nombre <- nombre - 4
-
-            //TEST POUR LES 1
-            SI nombre >= 1 ALORS
-                quotient <- nombre DIV 1
-                SI quotient > 0 ALORS
-                    POUR cpt de 1 à quotient
-                        resultat <- resultat + "I"
-                    FINPOUR
-                FINSI
-                nombre <- nombre - (quotient * 1)
+        //TEST POUR LES 90
+        SI nombre >= 90 ALORS
+        quotient <- nombre DIV 90
+            SI quotient > 0 ALORS
+                resultat <- resultat + "XC"
             FINSI
+        nombre <- nombre - 90
 
-        JUSQU'A nombre = 0
+        //TEST POUR LES 50
+        SI nombre >= 50 ALORS
+        quotient <- nombre DIV 50
+            SI quotient > 0 ALORS
+                resultat <- resultat + "L"
+            FINSI
+        nombre <- nombre - 50
+
+        //TEST POUR LES 40
+        SI nombre >= 40 ALORS
+        quotient <- nombre DIV 40
+            SI quotient > 0 ALORS
+                resultat <- resultat + "XL"
+            FINSI
+        nombre <- nombre - 40
+
+        //TEST POUR LES 10
+        SI nombre >= 10 ALORS
+            quotient <- nombre DIV 10
+            SI quotient > 0 ALORS
+                POUR cpt de 1 à quotient
+                    resultat <- resultat + "X"
+                FINPOUR
+            FINSI
+            nombre <- nombre - (quotient * 10)
+        FINSI
+
+
+        //TESTS POUR LES UNITES
+
+        //TEST POUR 9
+        SI nombre >= 9 ALORS
+        quotient <- nombre DIV 9
+            SI quotient > 0 ALORS
+                resultat <- resultat + "IX"
+            FINSI
+        nombre <- nombre - 9
+
+        //TEST POUR 5
+        SI nombre >= 5 ALORS
+        quotient <- nombre DIV 5
+            SI quotient > 0 ALORS
+                resultat <- resultat + "V"
+            FINSI
+        nombre <- nombre - 5
+
+        //TEST POUR LES 4
+        SI nombre >= 4 ALORS
+        quotient <- nombre DIV 4
+            SI quotient > 0 ALORS
+                resultat <- resultat + "IV"
+            FINSI
+        nombre <- nombre - 4
+
+        //TEST POUR LES 1
+        SI nombre >= 1 ALORS
+            quotient <- nombre DIV 1
+            SI quotient > 0 ALORS
+                POUR cpt de 1 à quotient
+                    resultat <- resultat + "I"
+                FINPOUR
+            FINSI
+            nombre <- nombre - (quotient * 1)
+        FINSI
+        
 FINPROCEDURE
 
 PROCEDURE RomainVersEntier ()
     VAR
-        nombre : CHAINE
-        resultat : ENTIER
-
-        
+        cNombre : CHAINE
+        nResultat : ENTIER
+        nLen : ENTIER
+        nCpt : ENTIER
 
     DEBUT
+
+        ECRIRE "Entrez un nombre en chiffres romains"
+        LIRE cNombre
+
+        nLen <- LONGUEUR(cNombre)
+        POUR nCpt DE 1 à nLen FAIRE
+
+
+
+        FINPOUR
 
 FINPROCEDURE
 
