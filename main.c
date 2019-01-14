@@ -20,6 +20,32 @@
 #define MAX 0
 #define MIN 4000
 
+void EntierVersRomain();
+void RomainVersEntier();
+
+int main()
+{
+    int nChoix;
+
+    do{
+        printf("Voulez vous convertir un nombre en chiffres romains, des chiffres romains en nombres ou quiter ?\n");
+        printf("1 : nombre en chiffres romains\n");
+        printf("2 : chiffres romains en nombres\n");
+        printf("0 : QUITTER\n");
+        scanf("%i",&nChoix);
+        if (nChoix == 1){
+            EntierVersRomain();
+        }
+        else if(nChoix == 2){
+            RomainVersEntier();
+        }
+    } while (nChoix != 0);
+
+    system("pause");
+
+    return 0;
+}
+
 void EntierVersRomain()
 {
     int nNombre = 0, nQuotient = 0, nCpt = 0;
@@ -243,27 +269,4 @@ void RomainVersEntier()
 
 
     }
-}
-
-int main()
-{
-    int nChoix;
-
-    do{
-        printf("Voulez vous convertir un nombre en chiffres romains, des chiffres romains en nombres ou quiter ?\n");
-        printf("1 : nombre en chiffres romains\n");
-        printf("2 : chiffres romains en nombres\n");
-        printf("0 : QUITTER\n");
-        scanf("%i",&nChoix);
-        if (nChoix == 1){
-            EntierVersRomain();
-        }
-        else if(nChoix == 2){
-            RomainVersEntier();
-        }
-    } while (nChoix != 0);
-
-    system("pause");
-
-    return 0;
 }
